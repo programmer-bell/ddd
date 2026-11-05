@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS customers (
+    id UUID PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id UUID PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    price DOUBLE PRECISION NOT NULL,
+    quantity INTEGER NOT NULL DEFAULT 0
+);
