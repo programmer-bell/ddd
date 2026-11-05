@@ -36,10 +36,29 @@ func (p Product) GetID() uuid.UUID {
 	return p.item.ID
 }
 
+func (p *Product) SetID(id uuid.UUID) {
+	if p.item == nil {
+		p.item = &entity.Item{}
+	}
+	p.item.ID = id
+}
+
 func (p Product) GetItem() *entity.Item {
 	return p.item
 }
 
 func (p Product) GetPrice() float64 {
 	return p.price
+}
+
+func (p *Product) SetPrice(price float64) {
+	p.price = price
+}
+
+func (p Product) GetQuantity() int {
+	return p.quantity
+}
+
+func (p *Product) SetQuantity(quantity int) {
+	p.quantity = quantity
 }

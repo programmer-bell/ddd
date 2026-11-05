@@ -6,6 +6,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/programmer-bell/ddd/aggregate"
+	"github.com/programmer-bell/ddd/domain/customer"
 )
 
 func TestMemory_GetCustom(t *testing.T) {
@@ -29,8 +30,9 @@ func TestMemory_GetCustom(t *testing.T) {
 	}
 	testCases := []testCase{
 		{
-			name: "no customer by id",
-			id:   uuid.MustParse("f47ac10b-58cc-0372-8567-0e3ht4qg6s3a"),
+			name:        "no customer by id",
+			id:          uuid.MustParse("f47ac10b-58cc-0372-8567-0e3b4c6d8f9a"),
+			expectedErr: customer.ErrCustomerNotFound,
 		}, {
 			name:        "customer by id",
 			id:          id,
