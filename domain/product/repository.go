@@ -8,7 +8,8 @@ import (
 )
 
 var (
-	ErrProductNotFound = errors.New("products not found")
+	ErrProductNotFound      = errors.New("products not found")
+	ErrProductAlreadyExists = errors.New("there is already such products")
 )
 
 type ProductRepository interface {
@@ -16,5 +17,5 @@ type ProductRepository interface {
 	GetByID(id uuid.UUID) (aggregate.Product, error)
 	Add(product aggregate.Product) error
 	Update(product aggregate.Product) error
-	Delte(id uuid.UUID) error
+	Delete(id uuid.UUID) error
 }
