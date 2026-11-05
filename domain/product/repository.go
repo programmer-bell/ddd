@@ -1,8 +1,14 @@
 package product
 
 import (
+	"errors"
+
 	"github.com/google/uuid"
 	"github.com/programmer-bell/ddd/aggregate"
+)
+
+var (
+	ErrProductNotFound = errors.New("products not found")
 )
 
 type ProductRepository interface {
